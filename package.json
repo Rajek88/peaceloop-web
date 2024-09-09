@@ -1,29 +1,25 @@
 {
-  "name": "infi-piano",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+  "name": "peace-loop",
+  "version": "1.0.0",
+  "description": "TensorFlow.js demo of PerformanceRNN - not actually published",
+  "main": "index.js",
+  "author": "Magenta",
+  "license": "Apache-2.0",
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "@tensorflow/tfjs-core": "0.8.0",
+    "tone-piano": "^0.0.12"
+  },
+  "scripts": {
+    "build": "tsc",
+    "bundle": "browserify --standalone performance_rnn performance_rnn.ts -p [tsify] > bundle.js",
+    "demo": "npm run bundle && http-server"
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.0",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "eslint": "^9.9.0",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.9",
-    "globals": "^15.9.0",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1"
+    "@types/jasmine": "^2.8.6",
+    "@types/node": "^9.6.5",
+    "browserify": "^16.2.0",
+    "http-server": "^0.12.1",
+    "tsify": "^4.0.0",
+    "typescript": "^2.8.1"
   }
 }
